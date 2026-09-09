@@ -182,7 +182,7 @@ async function sweep() {
     if (capsuleCount !== null && c > capsuleCount) firePulse("ForgeCore");
     capsuleCount = c;
     flash("capsules", c);
-    flash("tessera", grammar.rules ? grammar.rules.length : "—");
+    flash("tessera", grammar.rule_count ?? "—");
     document.getElementById("livetext").textContent =
       "node " + (health.node || "ForgeCore.Primary") + " · " + new Date(health.time).toLocaleTimeString();
     if (receipts && receipts.result && receipts.result.length) {
