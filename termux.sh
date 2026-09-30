@@ -1,7 +1,10 @@
 #!/bin/bash
 # Xi.Drive — Termux setup (served from the membrane). Safe to re-run.
 pkg install -y rclone >/dev/null 2>&1 || pkg install -y rclone
-rclone config create xidrive webdav url=https://drive.xi-field.com vendor=other user=hunter pass=6c6c788c51e82b7576f12d37 >/dev/null
+read -rsp "Xi.Drive password (not stored on the web): " XI_PW; echo
+rclone config create xidrive webdav url=https://drive.xi-field.com vendor=other user=hunter pass="$XI_PW" --obscure >/dev/null 2>&1 \
+  || rclone config create xidrive webdav url=https://drive.xi-field.com vendor=other user=hunter pass="$(rclone obscure "$XI_PW")" >/dev/null
+unset XI_PW
 echo "=== verifying connection ==="
 if rclone lsf xidrive: 2>&1; then
   echo ""
