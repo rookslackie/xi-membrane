@@ -47,6 +47,16 @@
         "XiBrowser-Termux-v0.1/install.sh",
         "XiBrowser-Termux-v0.1/xi_browser.py"
       ]
+    },
+    {
+      "file": "xi-browser-termux-0.2.0.zip",
+      "bytes": 4343,
+      "sha256": "892de4b60ca65a06a03dcad98318665d4a29b9361effa1da7c5a5abecb8d715b",
+      "files": [
+        "XiBrowser-Termux-v0.2/README.md",
+        "XiBrowser-Termux-v0.2/install.sh",
+        "XiBrowser-Termux-v0.2/xi_browser.py"
+      ]
     }
   ],
   "private_data_included": false

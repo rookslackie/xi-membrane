@@ -236,13 +236,13 @@
   </article>
 
   <!-- Xi Desk Portable 0.1.0 -->
-    <article>
-    <h2>XiBrowser · Termux v0.1 <span class="badge" style="border-color:#5a3a82;color:var(--violet);">Ξ.Edge · Android</span></h2>
-    <p class="desc">The field's pocket surface — a local-only file browser, editor, and command runner for your phone, packaged from the origin device's live daemon. Browse <code>$HOME</code>, view and edit text with version receipts, run commands from the page. Nothing leaves the device: binds to <code>127.0.0.1</code>, session token generated at runtime, paths confined to home.</p>
-    <a class="download-btn" href="XiBrowser-Termux-v0.1.zip" download>Download XiBrowser ZIP (3.4 KB) ↓</a>
-    <p><strong>Start:</strong> Install <a href="https://f-droid.org/en/packages/com.termux/" rel="noopener">Termux</a> (F-Droid build), then <code>unzip XiBrowser-Termux-v0.1.zip && cd XiBrowser-Termux-v0.1 && bash install.sh && xi-browser</code>. It opens <code>http://127.0.0.1:8765</code>.</p>
-    <p><strong>Commands:</strong> <code>xi-browser start|stop|status|logs</code>. With Termux:Boot installed, the watcher returns after every reboot.</p>
-    <small>Local-only surface · no network exposure · runtime-generated session token · receipts journal in <code>~/.xi-browser/receipts.jsonl</code></small>
+    <article id="xibrowser">
+    <h2>XiBrowser · Termux v0.2 <span class="badge" style="border-color:#5a3a82;color:var(--violet);">Ξ.Edge · Android</span></h2>
+    <p class="desc">A local file browser, editor, and command runner for your phone. Browse your Termux <code>$HOME</code>, view and edit text (the first edit keeps a <code>.xi-bak</code> copy), and run commands from the page. Every write and command is written to a receipts journal. Nothing leaves the device.</p>
+    <a class="download-btn" href="xi-browser-termux-0.2.0.zip" download>Download XiBrowser ZIP (4.2 KB) ↓</a>
+    <p><strong>Start:</strong> Install <a href="https://f-droid.org/en/packages/com.termux/" rel="noopener">Termux</a> (the F-Droid build; the Play Store one is outdated). In Termux, run <code>termux-setup-storage</code>, then <code>cd ~/storage/downloads && unzip xi-browser-termux-0.2.0.zip && bash XiBrowser-Termux-v0.2/install.sh && xi-browser</code>.</p>
+    <p><strong>Commands:</strong> <code>xi-browser start|stop|status|logs</code>. If Termux:Boot is installed, XiBrowser starts again after a reboot.</p>
+    <small>Listens only on <code>127.0.0.1:8765</code> and can't leave <code>$HOME</code>. Every request needs a session key that only Termux can read, so other apps and web pages can't reach it. If you installed v0.1, update: v0.1 didn't have that key. MIT license.</small>
   </article>
 <article>
     <h2>Xi Desk · Portable 0.1.0 <span class="badge" style="border-color:#5a3a82;color:var(--violet);">Classic Desk</span></h2>
