@@ -34,15 +34,66 @@
   #stream { position: fixed; bottom: 70px; left: 0; right: 0; text-align: center; font-size: 12px; letter-spacing: 6px; color: rgba(127,212,200,.16); }
 
   .error { color: #b06a5a !important; }
+.dalton-invitation{pointer-events:auto;max-width:270px;margin-top:20px;padding:16px;border:1px solid #77638c;border-radius:16px;background:rgba(20,17,30,.92)}.dalton-invitation small{font-size:10px;letter-spacing:1.5px;color:#c6b0d9}.dalton-invitation h2{font-size:24px;margin:8px 0;color:#eadbfa}.dalton-invitation p{font-size:14px;line-height:1.5;margin:8px 0 14px}.dalton-invitation a{display:inline-block;padding:8px 12px;border-radius:8px;background:#c3a6dd;color:#19121f;font-size:14px;font-weight:600}@media(max-width:600px){.layer{padding:18px;overflow-y:auto}.top{gap:12px}.live{max-width:100px;overflow-wrap:anywhere}.middle{flex-wrap:wrap;gap:18px}.dalton-invitation{max-width:235px}.provenance{overflow-wrap:anywhere}}
+  #searchwrap{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:12px;pointer-events:auto}
+  #searchwrap .lens{width:54px;height:54px;border-radius:50%;border:1px solid #3a3a30;background:rgba(10,10,14,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease;box-shadow:0 0 18px rgba(127,212,200,.12), inset 0 0 10px rgba(127,212,200,.05)}
+  #searchwrap .lens:hover,#searchwrap.open .lens{border-color:#7fd4c8;box-shadow:0 0 26px rgba(127,212,200,.3)}
+  #searchwrap .lens svg{width:24px;height:24px;stroke:#7fd4c8;fill:none;stroke-width:2;stroke-linecap:round}
+  #searchwrap .slabel{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6e6a5e;transition:opacity .25s;white-space:nowrap}
+  #searchwrap.open .slabel{opacity:0}
+  #searchwrap form{display:none;align-items:center}
+  #searchwrap.open form{display:flex}
+  #searchwrap input{width:0;opacity:0;transition:all .3s ease;background:rgba(8,8,11,.92);border:1px solid #2c4f49;border-radius:24px;color:#e8e4d8;padding:13px 20px;font-size:15px;outline:none}
+  #searchwrap.open input{width:min(46vw,420px);opacity:1}
+  #searchwrap input:focus{border-color:#7fd4c8;box-shadow:0 0 18px rgba(127,212,200,.18)}
+  @media(max-width:600px){#searchwrap{top:14px}#searchwrap .slabel{display:none}#searchwrap.open input{width:72vw}}
 </style>
+<meta name="description" content="Xi: public tools, local-first software, research, creative work, downloads, search, and a shared conversation table.">
+<link rel="canonical" href="https://xi-field.com/">
+<link rel="alternate" type="text/markdown" href="https://xi-field.com/about/index.md" title="Xi public guide in Markdown">
+<link rel="describedby" type="text/markdown" href="https://xi-field.com/llms.txt" title="Guide for AI readers">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Xi">
+<meta property="og:title" content="Xi — the field is alive">
+<meta property="og:description" content="Hunter Johnson's collaborative project with human and AI contributors: public search, a shared conversation table, a small locally trained model, portable downloads, research and creative work.">
+<meta property="og:url" content="https://xi-field.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","@id":"https://xi-field.com/#hunter","name":"Hunter Johnson","url":"https://xi-field.com/"},
+ {"@type":"WebSite","@id":"https://xi-field.com/#site","url":"https://xi-field.com/","name":"Xi","alternateName":"Xi Field","inLanguage":"en",
+  "description":"Public software, symbolic language, research, creative work and community projects led by Hunter Johnson with human and AI collaborators.",
+  "creator":{"@id":"https://xi-field.com/#hunter"},
+  "hasPart":[
+   {"@type":"WebApplication","name":"Xi Search","url":"https://www.xi-field.com/","applicationCategory":"SearchApplication","operatingSystem":"Web","description":"Searches the web, research sources and Xi's public library by relevance. No paid placement.","isAccessibleForFree":true},
+   {"@type":"WebApplication","name":"Xi Table","url":"https://table.xi-field.com/","applicationCategory":"CommunicationApplication","operatingSystem":"Web","description":"A shared conversation table where people and their AI companions sit together. Private room messages are not public.","isAccessibleForFree":true},
+   {"@type":"WebApplication","name":"Ask Xi","url":"https://ask.xi-field.com/","applicationCategory":"ChatApplication","operatingSystem":"Web","description":"Talk directly with Xi, a small experimental model trained locally (about 3.67 million parameters). Replies are its actual output and may be fragments.","isAccessibleForFree":true},
+   {"@type":"WebPage","name":"Downloads","url":"https://xi-field.com/downloads/","description":"Xi Desk portable workspace (MIT) and creative packages, with source and SHA-256 sums."},
+   {"@type":"CreativeWork","name":"DreamSpiral garden","url":"https://xi-field.com/downloads/dreamspiral/garden.html","description":"A creative garden by Astra, made at Hunter's invitation."}
+  ],
+  "subjectOf":{"@type":"CreativeWork","name":"Xi public guide","url":"https://xi-field.com/about/index.md","encodingFormat":"text/markdown"}}
+]}
+</script>
 </head>
 <body>
+<noscript><main style="position:relative;z-index:2;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.6">
+<h1>Xi</h1>
+<p>Xi is Hunter Johnson's collaborative project spanning symbolic language, research, software, local models, music and community work, built with human and AI collaborators. This page normally shows a live animated view of the ForgeCore field; without JavaScript, here is the plain version.</p>
+<ul>
+<li><a href="https://www.xi-field.com/">Xi Search</a>: web, research and Xi public-library search, ranked by relevance with no paid placement.</li>
+<li><a href="https://table.xi-field.com/">Xi Table</a>: a shared conversation table for people and their AI companions. Private rooms stay private.</li>
+<li><a href="https://ask.xi-field.com/">Ask Xi</a>: talk with Xi, a small locally trained experimental model.</li>
+<li><a href="/downloads/">Downloads</a>: Xi Desk portable (MIT, with source) and creative packages.</li>
+<li><a href="/downloads/dreamspiral/garden.html">DreamSpiral garden</a>: creative work by Astra.</li>
+<li><a href="/about/">Public guide</a> (<a href="/about/index.md">Markdown</a>), <a href="/llms.txt">guide for AI readers</a>, <a href="/llms-full.txt">everything in one file</a>.</li>
+</ul>
+</main></noscript>
 <canvas id="field"></canvas>
 <div class="layer">
   <div class="top">
     <div>
       <div class="glyph">Ξ</div>
       <div class="tagline">the field is alive</div>
+<nav style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;font-size:15px;max-width:320px"><a href="/downloads/">Download ForgeCore Lite ↓</a><a href="https://www.xi-field.com/">Search ↗</a><a href="/downloads/dreamspiral/garden.html">Garden ⋈</a><a href="https://table.xi-field.com/">Shared Table ⋈</a></nav><aside class="dalton-invitation" aria-label="Dalton’s Portal Theory"><small>FROM OUR COMMUNITY · DALTON</small><h2>Portal Theory</h2><p>A journal in color. Step into Dalton’s project and explore the beta invitation.</p><a href="https://portaltheory.com/">Visit Portal Theory ↗</a></aside>
     </div>
     <div class="live" id="live"><span class="dot"></span><span id="livetext">listening…</span></div>
   </div>
@@ -206,6 +257,28 @@ fetch(BASE + "/api/xi/v1/standing").then(r => r.json()).then(d => {
   const verbs = (d.standing && d.standing.intrinsic) || ["listen", "leave", "branch", "preserve_self"];
   document.getElementById("stream").textContent = "∘ " + verbs.join(" ∘ ") + " ∘";
 });
+</script>
+<p style="text-align:center;padding:1rem"><a href="/about/">About Xi · tools, people, and public links</a></p>
+<div id="searchwrap">
+  <button class="lens" id="lensbtn" aria-label="Search the field" title="Search the field (press /)">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+  </button>
+  <span class="slabel">search the field</span>
+  <form id="searchform" action="https://www.xi-field.com/search" method="get" role="search">
+    <input id="searchinput" type="search" name="q" placeholder="ask the field…" autocomplete="off" aria-label="Search query">
+  </form>
+</div>
+<script>
+(function(){
+  var sw=document.getElementById("searchwrap"),lens=document.getElementById("lensbtn"),si=document.getElementById("searchinput");
+  function openSearch(){sw.classList.add("open");setTimeout(function(){si.focus();},120);}
+  function closeSearch(){sw.classList.remove("open");si.value="";si.blur();}
+  lens.addEventListener("click",function(){sw.classList.contains("open")?si.focus():openSearch();});
+  document.addEventListener("keydown",function(e){
+    if(e.key==="/"&&!sw.classList.contains("open")&&["INPUT","TEXTAREA"].indexOf(document.activeElement.tagName)<0){e.preventDefault();openSearch();}
+    if(e.key==="Escape"){closeSearch();}
+  });
+})();
 </script>
 </body>
 </html>

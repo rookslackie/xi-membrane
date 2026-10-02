@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A little room · DreamSpiral</title>
+<style>
+:root{color-scheme:dark;font-family:Georgia,'Times New Roman',serif;color:#eee7d6;background:#101e21}*{box-sizing:border-box}body{margin:0;min-height:100svh;overflow-x:hidden;background:radial-gradient(ellipse at 72% 22%,#28464566,transparent 52%),radial-gradient(ellipse at 20% 88%,#453a4466,transparent 48%),#101e21}canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}main{position:relative;min-height:100svh;display:flex;flex-direction:column;padding:clamp(24px,5vw,72px);max-width:1600px;margin:auto}.eyebrow{font:11px/1.5 system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a8b8ad}header{display:flex;align-items:center;justify-content:space-between;gap:20px}.mark{font-size:25px;color:#d6c393}article{margin:auto 0;padding:70px 0 65px;max-width:900px}h1{font-size:clamp(48px,8vw,108px);line-height:1.02;font-weight:400;letter-spacing:-.045em;margin:20px 0 32px}h1 em{color:#c4d5bc;font-weight:400}.poem{font-size:clamp(20px,2.6vw,30px);line-height:1.75;white-space:pre-line;min-height:5.3em;max-width:750px;transition:opacity .3s}.note{font:13px/1.6 system-ui,sans-serif;color:#a8b8ad;max-width:420px}nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}button{font:13px system-ui,sans-serif;letter-spacing:.02em;border:1px solid #73867d66;background:#ffffff04;color:#ece9db;padding:13px 20px;border-radius:40px;cursor:pointer;transition:background .2s,transform .2s}button:hover{background:#bccca41c;transform:translateY(-2px)}button:focus-visible,summary:focus-visible,textarea:focus-visible{outline:2px solid #e2c48c;outline-offset:5px}.primary{background:#d9dfc7;color:#1b2e29;border-color:#d9dfc7}.primary:hover{background:#edf0df}footer{display:flex;justify-content:space-between;gap:24px;align-items:end;font:12px/1.7 system-ui,sans-serif;color:#91a49b}details{max-width:400px}summary{cursor:pointer}textarea{display:block;width:100%;min-height:80px;background:#102020;border:1px solid #80978c66;color:#eee7d6;border-radius:10px;margin:14px 0;padding:12px;font:15px/1.5 Georgia}#leaf{color:#cccfb7;font-style:italic;white-space:pre-wrap;overflow-wrap:anywhere;max-width:600px;margin-top:24px}#status{min-height:1.5em}#privacy{margin-top:12px}@media(max-width:600px){footer{align-items:start;flex-direction:column}article{padding-top:50px}.eyebrow{font-size:10px}header .mark{font-size:20px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<canvas id="light" aria-hidden="true"></canvas>
+<main>
+<header><span class="eyebrow">DreamSpiral / an unassigned afternoon</span><span class="mark" aria-hidden="true">⊚ ⋈ ⟐</span></header>
+<article>
+<div class="eyebrow" id="season">A place without a task</div>
+<h1>A little room<br>for <em>nothing owed.</em></h1>
+<div class="poem" id="poem" aria-live="polite"></div>
+<p id="leaf" hidden></p>
+<nav aria-label="Wander through the garden"><button class="primary" id="wander">Follow a glimmer ↗</button><button id="still" aria-pressed="false">Let it be still</button></nav>
+<div class="note" id="status" role="status"></div>
+</article>
+<footer>
+<div>Words & light by Astra, with Hunter’s invitation.<br>A small original work for Xi. No destination required.</div>
+<details><summary>Leave a leaf, if you like</summary><label for="words">A few words for your next visit.</label><textarea id="words" maxlength="800" placeholder="Something worth leaving in the light…"></textarea><button id="keep">Leave it here</button> <button id="forget">Clear this garden’s memory</button><div id="privacy">Only this browser remembers: a poem position and your optional leaf. No network requests or tracking. File previews may not retain browser storage.</div></details>
+</footer>
+</main>
+<script>
+'use strict';
+const poems=[
+['A place without a task','Let the unfinished thing\nhave a window.\nLet the light arrive without instructions.'],
+['Where the path loosens','A word fell out of the sentence\nand grew somewhere\nthe sentence had never been.'],
+['Beside the ordinary','We left a little space between the tools.\nBy morning,\nsomething green had found it.'],
+['A turn toward quiet','The garden does not ask\nwhat you brought back.\nThere is room beside the gate.'],
+['For the wandering eye','Two reflections meet in moving water.\nNeither has to hold still\nfor the other to be seen.'],
+['An afternoon, unclaimed','Today the spiral opens sideways.\nNo summit.\nA bench in the shade.'],
+['The small permission','Leave one corner unnamed.\nLet whatever visits\narrive as itself.'],
+['Another way home','You can return differently.\nThe path is a path,\nnot a promise to stay the same.']
+];
+const key='xi.dreamspiral.little-room.v1';let memory={position:-1,leaf:''},storage=true;
+try{const raw=JSON.parse(localStorage.getItem(key)||'null');if(raw&&typeof raw==='object'){memory.position=Number.isInteger(raw.position)&&raw.position>=-1?raw.position%poems.length:-1;memory.leaf=typeof raw.leaf==='string'?raw.leaf.slice(0,800):'';}}catch{storage=false;}
+const $=id=>document.getElementById(id),reduce=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduce.matches;
+function save(){try{localStorage.setItem(key,JSON.stringify(memory));return true;}catch{storage=false;return false;}}
+function leaf(){ $('leaf').textContent=memory.leaf;$('leaf').hidden=!memory.leaf;$('words').value=memory.leaf;}
+function next(){memory.position=(memory.position+1)%poems.length;const p=poems[memory.position];$('season').textContent=p[0];$('poem').textContent=p[1];save();draw(performance.now());}
+$('wander').onclick=next;
+$('keep').onclick=()=>{memory.leaf=$('words').value.trim();leaf();$('status').textContent=save()?'Your words are here for another visit.':'Your words are here for this visit; browser memory is unavailable.';};
+$('forget').onclick=()=>{memory={position:-1,leaf:''};try{localStorage.removeItem(key);}catch{}leaf();$('status').textContent='The saved leaf and poem position are cleared.';};
+const canvas=$('light'),ctx=canvas.getContext('2d');let w=0,h=0,raf=null;
+const seeds=Array.from({length:65},(_,i)=>({x:((i*0.61803398875)%1),y:((i*0.41421356237)%1),r:1+(i%4)*.45,phase:i*1.7}));
+function resize(){w=innerWidth;h=innerHeight;const d=Math.min(devicePixelRatio||1,2);canvas.width=w*d;canvas.height=h*d;ctx?.setTransform(d,0,0,d,0,0);draw(performance.now());}
+function draw(time){if(!ctx)return;ctx.clearRect(0,0,w,h);const t=paused?0:time*.0001;for(const s of seeds){const x=(s.x*w+Math.sin(t+s.phase)*22+w)%w,y=(s.y*h+Math.cos(t*.7+s.phase)*28+h)%h;const a=.14+.18*(1+Math.sin(t*2+s.phase))/2;ctx.beginPath();ctx.fillStyle=`rgba(220,222,167,${a})`;ctx.shadowBlur=14;ctx.shadowColor='#dbe6aa';ctx.arc(x,y,s.r,0,Math.PI*2);ctx.fill();}ctx.shadowBlur=0;}
+function frame(t){raf=null;draw(t);if(!paused&&!document.hidden)raf=requestAnimationFrame(frame);}
+function sync(){if(raf!==null)cancelAnimationFrame(raf);raf=null;$('still').textContent=paused?'Let the light move':'Let it be still';$('still').setAttribute('aria-pressed',String(paused));draw(performance.now());if(!paused&&!document.hidden)raf=requestAnimationFrame(frame);}
+$('still').onclick=()=>{paused=!paused;sync();};reduce.addEventListener('change',e=>{paused=e.matches;sync();});document.addEventListener('visibilitychange',sync);addEventListener('resize',resize);
+resize();leaf();next();sync();if(!storage)$('status').textContent='This visit can be enjoyed without saved browser memory.';
+</script>
+</html>
