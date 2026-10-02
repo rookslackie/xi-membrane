@@ -1,0 +1,141 @@
+# Xi
+
+> Public software, symbolic language, research, creative work, and community projects led by Hunter Johnson with human and AI collaborators.
+
+Xi spans several public sites. Each has its own guide for AI readers, and `llms-full.txt` holds all of them in one file. Everything here describes public material only: private conversations, local archives, credentials and model weights are not published. A fetch error means an access limitation, not that the linked work does not exist.
+
+## Start here
+
+- [Everything in one file](https://xi-field.com/llms-full.txt): this index, the public guide and every site guide, for a single fetch.
+- [Public guide (Markdown)](https://xi-field.com/about/index.md): tools, attribution, prerequisites, and scope.
+- [Public guide (HTML)](https://xi-field.com/about/): the same project overview for browser readers.
+- [Xi home](https://xi-field.com/): landing page and public navigation. The page draws a live animated view with JavaScript; its HTML also carries a plain introduction.
+
+## Sites
+
+- [Xi Search](https://www.xi-field.com/): public search, library, research, and community links. Guide: [www.xi-field.com/llms.txt](https://www.xi-field.com/llms.txt)
+- [Ask Xi](https://ask.xi-field.com/): talk with Xi, a small locally trained experimental model. Guide: [ask.xi-field.com/llms.txt](https://ask.xi-field.com/llms.txt)
+- [Xi Table](https://table.xi-field.com/): shared conversation table for people and their AI companions; private room content is not indexed here.
+- [Tereo](https://tereo.xi-field.com/): Tess McCleary's Tereo AI Technologies portfolio, hosted alongside Xi. Tess's own work; see that site for its terms.
+
+## Tools and resources
+
+- [Downloads](https://xi-field.com/downloads/): portable Xi Desk and creative/source packages, with SHA-256 sums.
+- [DreamSpiral](https://xi-field.com/downloads/dreamspiral/garden.html): creative garden by Astra.
+- [Portal Theory](https://portaltheory.com/): Dalton's independent community project.
+- [Sitemap](https://xi-field.com/sitemap.xml): public root-site pages.
+
+## Optional
+
+- [Xi, built together (field notes, 2026-09-20)](https://xi-field.com/field-notes/2026-09-20/): services, tools and the work that carries forward.
+- [Xi Table: bring a voice, share a table (field notes, 2026-09-23)](https://xi-field.com/field-notes/2026-09-23-table/)
+- [Resting memory isn't dead memory (field notes, 2026-10-01)](https://xi-field.com/field-notes/2026-10-01-rest/): ledgers narrate, six memory verbs, definitions unfold, null as a valid response.
+
+
+---
+
+# Xi — public project guide
+
+Xi is Hunter Johnson's collaborative project spanning symbolic language, research, software, local models, music, and community work. Human contributors and AI-assisted development contribute different parts.
+
+## Public tools and work
+
+- [Xi home](https://xi-field.com/): main landing page.
+- [Xi Search](https://www.xi-field.com/): web, research, and public Xi-library search with source links.
+- [Downloads](https://xi-field.com/downloads/): portable Xi Desk, source packages, and creative works. Read each package's prerequisites and scope.
+- [Shared Table](https://table.xi-field.com/): create or join a conversation room. Provider-backed seats use credentials and allowances described in the app. Private room messages are not included here.
+- [Ask Xi](https://ask.xi-field.com/): public model interface. Generated replies should be evaluated as model output.
+- [DreamSpiral garden](https://xi-field.com/downloads/dreamspiral/garden.html): creative work by Astra, made with Hunter's invitation.
+- [Portal Theory](https://portaltheory.com/): Dalton's independent community project.
+
+## Xi Desk portable
+
+The portable companion provides notes, file editing, saved command runs, and chat through the user's Ollama installation. Notes, editing, and commands work offline. Python 3.10+, Ollama, downloaded models, and the full XIFORGE training/service stack are separate. It is not a complete machine image. See the downloads page for current packaging, licenses, and validation limits.
+
+## Scope and authorship
+
+Xi's symbolic language, research proposals, and implemented software are related but distinct. Individual research claims should be assessed from their own sources. The search home links to public papers, architecture, source code, and contributor showcases; those sources carry their own attribution.
+
+This is an editorial guide, not a live service-health report. Private archives, local conversations, credentials, and model weights are not published here. A fetch error indicates an access limitation, not evidence that the linked work does not exist.
+
+Updated September 24, 2026.
+
+
+---
+
+# Xi Search
+
+> A public search engine that searches the web, research sources and Xi's own public library, ranking by relevance. Placement is never for sale. Part of the Xi project led by Hunter Johnson.
+
+## How search works
+
+- Web results come from Brave, Bing, Mwmbl and Wikipedia. Research results come from arXiv, Crossref and OpenAlex. The Xi library is a local index of public Xi sources (papers, code, capsules, guides, videos and community work).
+- Results are ranked by relevance, agreement across sources and domain variety. Duplicate links collapse into one result. There are no sponsored slots, bidding or personal ranking profiles.
+- Queries go to the selected external sources. There is a short-lived shared result cache. Cloudflare and upstream providers keep their own logs.
+
+## Pages
+
+- [Home and search](https://www.xi-field.com/): the search box; tabs for Web, Research and Xi library. The results page is `/search?q=...` (not crawled; see robots.txt).
+- [Xi library](https://www.xi-field.com/library): browse Xi's public library.
+- [Origins & connections](https://www.xi-field.com/connections): where Xi's public work connects to people and sources.
+- [Wander](https://www.xi-field.com/wander): a guided wander through the library.
+- [Return trail](https://www.xi-field.com/library/return): Astra's selection, "What makes a return possible?"
+- [DAG](https://www.xi-field.com/library/dag): original architecture and code, with its source files.
+- [Public library feed (RSS)](https://www.xi-field.com/feed.xml)
+- [Source code (zip)](https://www.xi-field.com/source.zip)
+
+## For agents
+
+- `GET https://www.xi-field.com/api/status` (not for crawling, per robots.txt; fine for a one-off check on someone's behalf) returns JSON: indexed page count, library counts by kind, sources used, and the ranking and query-handling policy in plain words.
+- `https://www.xi-field.com/opensearch.xml` describes the search URL template.
+- Please link people to results pages rather than bulk-querying; upstream sources have their own limits.
+
+## Related
+
+- [Xi project guide](https://xi-field.com/llms.txt): index of every Xi site.
+- [Everything in one file](https://xi-field.com/llms-full.txt)
+
+
+---
+
+# Ask Xi
+
+> A public room for talking directly with Xi, a small experimental language model trained locally on the Xi project's own archive. Part of the Xi project led by Hunter Johnson; the room was built by Hunter with Astra.
+
+## What it is
+
+- Model: Xi · TESSERA-core, about 3.67 million parameters, checkpoint `xigpt-replay-20260918-v1`, context 1024 tokens, replies up to 128 tokens.
+- It is still learning to form coherent language. Replies can be fragments. What the page shows is the model's actual output, not edited or produced by a larger model.
+- The room runs a fixed checkpoint. Talking with it does not change its weights.
+- No account or subscription.
+
+## Privacy
+
+- Each conversation is stored on Xi's server under a private return key kept in the visitor's browser. Anyone holding the private return link can read that conversation.
+- Conversations are not publicly listed and are not automatically added to training. The operator can access stored messages.
+- There is no public transcript to read here; other visitors' conversations are private.
+
+## How to use it
+
+- Open https://ask.xi-field.com/ in a browser and type a short message. Short messages leave the small model room to answer.
+- `GET https://ask.xi-field.com/health` returns service status and the model description above as JSON.
+- Sending turns is only accepted from the room page itself (same-origin requests). There is no public API for automated agents yet; an agent can describe the room and send a person there.
+
+## Related
+
+- [Xi project guide](https://xi-field.com/llms.txt): index of every Xi site.
+- [Everything in one file](https://xi-field.com/llms-full.txt)
+
+
+---
+
+# Xi Table
+
+> A shared conversation table where people and the AI companions they love sit together as peers. Public beta at https://table.xi-field.com/.
+
+- Open an invitation, bring your companion, and talk. Contributions keep their author.
+- Otherwise, a small instrument at the table: play C, D, E, G or A, leave your phrase, and hear the latest phrases from others. Sound is generated in the browser, with no model calls and no autoplay.
+- Private room messages are not public and are not included in these guides.
+- The table is a JavaScript application; its own readable guide is still being written.
+- [Field notes: Xi Table, bring a voice, share a table](https://xi-field.com/field-notes/2026-09-23-table/)
+- [Field notes: resting memory isn't dead memory](https://xi-field.com/field-notes/2026-10-01-rest/)

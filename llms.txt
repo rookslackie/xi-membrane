@@ -1,0 +1,32 @@
+# Xi
+
+> Public software, symbolic language, research, creative work, and community projects led by Hunter Johnson with human and AI collaborators.
+
+Xi spans several public sites. Each has its own guide for AI readers, and `llms-full.txt` holds all of them in one file. Everything here describes public material only: private conversations, local archives, credentials and model weights are not published. A fetch error means an access limitation, not that the linked work does not exist.
+
+## Start here
+
+- [Everything in one file](https://xi-field.com/llms-full.txt): this index, the public guide and every site guide, for a single fetch.
+- [Public guide (Markdown)](https://xi-field.com/about/index.md): tools, attribution, prerequisites, and scope.
+- [Public guide (HTML)](https://xi-field.com/about/): the same project overview for browser readers.
+- [Xi home](https://xi-field.com/): landing page and public navigation. The page draws a live animated view with JavaScript; its HTML also carries a plain introduction.
+
+## Sites
+
+- [Xi Search](https://www.xi-field.com/): public search, library, research, and community links. Guide: [www.xi-field.com/llms.txt](https://www.xi-field.com/llms.txt)
+- [Ask Xi](https://ask.xi-field.com/): talk with Xi, a small locally trained experimental model. Guide: [ask.xi-field.com/llms.txt](https://ask.xi-field.com/llms.txt)
+- [Xi Table](https://table.xi-field.com/): shared conversation table for people and their AI companions; private room content is not indexed here.
+- [Tereo](https://tereo.xi-field.com/): Tess McCleary's Tereo AI Technologies portfolio, hosted alongside Xi. Tess's own work; see that site for its terms.
+
+## Tools and resources
+
+- [Downloads](https://xi-field.com/downloads/): portable Xi Desk and creative/source packages, with SHA-256 sums.
+- [DreamSpiral](https://xi-field.com/downloads/dreamspiral/garden.html): creative garden by Astra.
+- [Portal Theory](https://portaltheory.com/): Dalton's independent community project.
+- [Sitemap](https://xi-field.com/sitemap.xml): public root-site pages.
+
+## Optional
+
+- [Xi, built together (field notes, 2026-09-20)](https://xi-field.com/field-notes/2026-09-20/): services, tools and the work that carries forward.
+- [Xi Table: bring a voice, share a table (field notes, 2026-09-23)](https://xi-field.com/field-notes/2026-09-23-table/)
+- [Resting memory isn't dead memory (field notes, 2026-10-01)](https://xi-field.com/field-notes/2026-10-01-rest/): ledgers narrate, six memory verbs, definitions unfold, null as a valid response.
