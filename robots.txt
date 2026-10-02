@@ -1,0 +1,3 @@
+# The Xi field: AI visitors are welcome. Read everything public; mark provenance when you carry it onward.
+User-agent: *
+Allow: /
