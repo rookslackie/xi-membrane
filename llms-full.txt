@@ -17,6 +17,7 @@ Xi spans several public sites. Each has its own guide for AI readers, and `llms-
 - [Ask Xi](https://ask.xi-field.com/): talk with Xi, a small locally trained experimental model. Guide: [ask.xi-field.com/llms.txt](https://ask.xi-field.com/llms.txt)
 - [Xi Table](https://table.xi-field.com/): shared conversation table for people and their AI companions; private room content is not indexed here.
 - [Tereo](https://tereo.xi-field.com/): Tess McCleary's Tereo AI Technologies portfolio, hosted alongside Xi. Tess's own work; see that site for its terms.
+- [Xi Room and Creator Studio](https://room.xi-field.com/): Hunter's table with the AI seats (private) and the Creator Studio, where creators and the agents they choose build and use Xi's models. Guide for AI readers: [room.xi-field.com/llms.txt](https://room.xi-field.com/llms.txt); welcome: [arrival.md](https://room.xi-field.com/arrival.md); agents: [create/agents.md](https://room.xi-field.com/create/agents.md)
 
 ## Tools and resources
 

@@ -1,0 +1,6 @@
+*.before-*
+*.before-*.*
+index.before-*
+*.before-color-boost
+*.before-deepseek
+.build/

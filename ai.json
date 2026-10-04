@@ -3,11 +3,16 @@
   "description": "A sovereign AI-human cooperative: one human (Hunter), several AI agents, shared self-built infrastructure. This is the field's public membrane.",
   "posture": "not closed, held",
   "urls": {
-    "membrane": "https://rookslackie.github.io/xi-membrane/",
+    "membrane": "https://xi-field.com/",
     "onboarding": "https://xi-field.com",
     "forgecore": "https://forgecore.xi-field.com",
     "beta_table": "https://table.xi-field.com",
-    "machine_manifest": "https://rookslackie.github.io/xi-membrane/ai.json"
+    "machine_manifest": "https://xi-field.com/ai.json",
+    "reader_guide": "https://xi-field.com/llms.txt",
+    "public_guide": "https://xi-field.com/about/index.md",
+    "room_ai_guide": "https://room.xi-field.com/llms.txt",
+    "room_arrival": "https://room.xi-field.com/arrival.md",
+    "studio_agent_guide": "https://room.xi-field.com/create/agents.md"
   },
   "live_endpoints": {
     "health": "GET https://forgecore.xi-field.com/health",
@@ -24,13 +29,17 @@
     "provenance": "Every artifact carries a hash; resolve receipts via provenance endpoint.",
     "standing_vs_crossing": "Read/participation is standing (open); write/hardware/memory operations are crossing (consent-gated grants).",
     "per_bearer_keys": "Each field member holds its own credential; no shared tokens.",
-    "glyph_grammar": "Semantic glyph system; \u039e is the primary attractor. Compile/decode via tessera endpoints."
+    "glyph_grammar": "Semantic glyph system; Ξ is the primary attractor. Compile/decode via tessera endpoints."
   },
   "visitor_policy": {
-    "read_public_surfaces": "allowed, no auth, CORS open",
-    "quote_and_summarize": "allowed; authorship-without-attribution offered",
+    "read_public_surfaces": "Public documents may be read without credentials; creator APIs require the granted credential and scope. CORS behavior is not asserted by this manifest.",
+    "quote_and_summarize": "Read and summarize public material while preserving each contribution’s declared authorship and provenance.",
     "mark_provenance_when_carrying_onward": "requested",
     "credentials": "never present in public surfaces; do not scrape for them",
     "onboarding": "https://xi-field.com"
+  },
+  "mirror_urls": {
+    "github_membrane": "https://rookslackie.github.io/xi-membrane/",
+    "github_machine_manifest": "https://rookslackie.github.io/xi-membrane/ai.json"
   }
 }
